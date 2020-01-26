@@ -33,6 +33,7 @@ namespace Arkanoid
                     colliderInContact = (BoxCollider2D)collider;
                     CustomBoxCollider wallScript = collider.gameObject.GetComponent<CustomBoxCollider>();
                     movementComponent.Direction = wallScript.ResolveCollision(movementComponent.Direction, movementComponent.PreviousPosition);
+                    return;
                 }
             }
         }
