@@ -26,6 +26,10 @@ namespace Arkanoid
 
         public static void FireEvent<T>(T customEvent = null) where T : CustomEvent {
             System.Type type = typeof(T);
+            if (!eventListeners.ContainsKey(type)) {
+                Debug.Log($"No listeners found for the event {type}.");
+                return;
+            }
             foreach (EventListener<T> listener in eventListeners[type]) {
                 listener(customEvent);
             }
