@@ -17,7 +17,7 @@ namespace Arkanoid
             movementComponent = GetComponent<BallMovementComponent>();
         }
 
-        private void Update() {
+        private void FixedUpdate() {
             if (colliderInContact) {
                 if (!CollidersAreTouching(GetOtherColliderRect(colliderInContact))) {
                     colliderInContact = null;
